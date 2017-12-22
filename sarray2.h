@@ -23,7 +23,7 @@ static const uint32_t data_size = 256;
  * The mask used to access the elements in the data array in a sparse array
  * node.
  */
-static const uint32_t data_mask = data_size - 1;
+static const uint32_t data_mask = 255;
 /**
  * Sparse arrays, used to implement dispatch tables.  Current implementation is
  * quite RAM-intensive and could be optimised.  Maps 32-bit integers to pointers.
@@ -52,7 +52,7 @@ typedef struct
 	/**
 	 * The data stored in this sparse array node.
 	 */
-	void *data[data_size];
+	void *data[256];
 } SparseArray;
 
 /**

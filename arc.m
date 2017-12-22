@@ -173,7 +173,7 @@ static const long weak_mask = ((size_t)1)<<((sizeof(size_t)*8)-1);
 /**
  * All of the bits other than the top bit are the real reference count.
  */
-static const long refcount_mask = ~weak_mask;
+static const long refcount_mask = ~( ((size_t)1) << ((sizeof(size_t) * 8) - 1) );
 
 size_t object_getRetainCount_np(id obj)
 {
